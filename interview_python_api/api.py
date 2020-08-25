@@ -1,15 +1,21 @@
 from dataclasses import dataclass
-from typing import List
-import datetime
+from typing import List, Iterator
+from datetime import datetime
+
+from interview_python_api.underbelly import Underbelly
+
+@dataclass
+class APIObject:
+    created_at: datetime
+    identifier: str
+    data:       dict
 
 @dataclass
 class Client:
     access_token_key:    str
     access_token_secret: str
 
-    def list(self, object_name: str) -> List[str]:
-        return ['a']*5
+    def fetch(self, endpoint: str, start_date: datetime, end_date: datetime) -> Iterator[List[APIObject]]:
+        'Yields pages of API results'
 
-    def query(self, object_name: str, start_date: datetime, end_date: datetime) -> List[str]:
-        return ['b']*10
-
+        yield from Underbelly(endpoint, APIObject, start_date, end_date).paginate(20)
