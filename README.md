@@ -39,17 +39,17 @@ To kick-start a possible solution, here is an example of how to set up this code
 
 3. Paste the following code:
 
-```python
-from python_api_client_exercise import api
-from datetime import datetime
+    ```python
+    from python_api_client_exercise import api
+    from datetime import datetime
 
-client = api.Client('access_token', 'access_token_secret')
+    client = api.Client('access_token', 'access_token_secret')
 
-for endpoint in api.ENDPOINTS:
-    print(endpoint)
-    results = client.fetch(endpoint, start_date=datetime(2020, 1, 1), end_date=datetime(2020, 2, 1))
-    for data in results:
-      print(data)
-```
+    for endpoint in api.ENDPOINTS:
+        print(endpoint)
+        results = client.fetch(endpoint, start_date=datetime(2020, 1, 1), end_date=datetime(2020, 2, 1))
+        for data in results:
+          print(data)
+    ```
 
 4. Now, navigate up to the [Exercise](#exercise) section and implement as many of the requirements (in-order) as you can!
