@@ -35,7 +35,7 @@ To kick-start a possible solution, here is an example of how to set up this code
 1. Clone this repository
 2. Open the python environment of your choice (docker/ipython/python/anaconda/mu/jupyter notebook etc.)
    1. Ensure that the requirements (and optionally the repo itself) are pip-installed.
-      `pip install repo`
+      `pip install git+http://github.com/tmck-code/python-api-client-exercise`
 
 3. Paste the following code:
 
