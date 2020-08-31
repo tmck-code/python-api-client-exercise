@@ -3,6 +3,8 @@ from uuid import uuid1
 from datetime import datetime, timedelta
 from itertools import zip_longest
 
+class InternalAPIError(Exception):
+    'Indicates an unexpected error'
 
 class Underbelly:
     'Here be dragons'
@@ -25,6 +27,8 @@ class Underbelly:
 
     def gen_items(self):
         for day in range(0, int((self.end_date - self.start_date).total_seconds()/86400)):
+            if day % 100 == 0 and randint(0, 1):
+                raise InternalAPIError(f'Database error occurred! Wait 5 seconds and retry your query')
             yield self.klass(
                 created_at = self.start_date+timedelta(days=day),
                 identifier = str(uuid1()),

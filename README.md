@@ -10,23 +10,20 @@ This is a basic fake API Client for developers to interact with, somewhat simula
 ## API Client
 
 This repository aims to mimick the experience of using an existing `pip`-packaged client to access data via an API.
-This repository contains the code for both the "public-facing" client code, and also the "private/internal" API implementation.
+This repository contains the code for both the "public-facing" client library, and also the "private/internal" API implementation.
 
 _Only the methods in the "public-facing" client code need to be examined for this exercise. You may examine the API implementation if you wish, but it has been written in a style that is intended to slow down comprehension and reading, and is not required to complete the exercise._
 
-The API client is comprised of 2 files:
+The API client is comprised of **two modules/files**:
 
 - `python_api_client_exercise/api.py` - "public-facing" client library
 - `python_api_client_exercise/underbelly.py` - "private/internal" API implementation
 
-There are several main endpoints that return different items, in different amounts:
+There are **three endpoints** that return different items, in different amounts:
 
-```
-* 'lists'
-* 'customers'
-* 'endpoints'
-```
-> e.g. len(lists) < len(customers) < len(products)
+- `lists`
+- `customers`
+- `endpoints`
 
 There is a single method `fetch` that yields pages of api results. **This is the only method that you have to interact with.**
 
@@ -38,6 +35,12 @@ class Client:
 
 # The available endpoints can found via the api.ENDPOINTS variable
 ```
+
+This method yields a paginated response of `APIObject` objects, which contain 3 fields:
+
+<https://github.com/tmck-code/python-api-client-exercise/blob/fc2c5c0fd07678697e51b18ec9a8db3b43a850ef/python_api_client_exercise/api.py#L7-L11>
+
+---
 
 ## Getting Started
 
@@ -73,6 +76,6 @@ To kick-start a possible solution, here is an example of how to set up this code
 2. Print a lightly-formatted representation of the response data
    > For this step, see the raw output produced by the example code above, and then alter it to log something nicer for each object, and also log any summaries that you might care about after all items have been returned from your request.
 3. Handle possible errors
-    > The fake API will randomly throw an exception, but otherwise it returns some random fake data based on the "endpoint" that is requested. Your solution should implement some sort of error handling that roughly deals with each kind of error in an appropriate fashion. You should test your implementation before considering this step as done (via running - no unit tests required).
+    > The fake API could randomly throw an exception, but otherwise it returns some random fake data based on the "endpoint" that is requested. Your solution should implement some sort of error handling that roughly deals with each kind of error in an appropriate fashion. You should test your implementation before considering this step as done (via running - no unit tests required).
 4. (_extension_) Write output to file.
-    > After the error handling is fully implemented and tested, alter your solution so that the output from each endpoint is written to its own file on disk. You may choose any output format that you deem appropriate. 
+    > After the error handling is fully implemented and tested, alter your solution so that the output from each endpoint is written to its own file on disk. You may choose any output format that you deem appropriate.
