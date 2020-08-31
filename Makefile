@@ -1,6 +1,6 @@
 pip/clean:
 	./setup.py clean && \
-		rm -rf build dist interview_python_api.egg-info
+		rm -rf build dist python_api_client_exercise.egg-info
 
 pip/build: pip/clean
 	./setup.py bdist

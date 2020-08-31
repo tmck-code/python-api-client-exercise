@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-'Define the interview-python-api Python package'
+'Defines the python-api-client-exercise Python package'
 
 import setuptools
 
 setuptools.setup(
-    name='interview_python_api',
+    name='python_api_client_exercise',
     version='0.0.1',
     author='Tom McKeesick',
     author_email='tom.mckeesick@lexer.com.au',
-    description='The lexer internal fake Python API for job applicants',
-    long_description='The lexer internal fake Python API for job applicants',
+    description='A fake Python API Client problem to solve',
+    long_description='',
     long_description_content_type='text/markdown',
-    url='https://github.com/lexerdev/interview-python-api',
+    url='https://github.com/tmck-code/python-api-client-exercise',
     packages=setuptools.find_packages(),
     package_data={},
     classifiers=[

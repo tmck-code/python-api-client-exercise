@@ -2,13 +2,15 @@ from dataclasses import dataclass
 from typing import List, Iterator
 from datetime import datetime
 
-from interview_python_api.underbelly import Underbelly
+from python_api_client_exercise.underbelly import Underbelly
 
 @dataclass
 class APIObject:
     created_at: datetime
     identifier: str
     data:       dict
+
+ENDPOINTS = ['lists', 'customers', 'products']
 
 @dataclass
 class Client:
