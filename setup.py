@@ -7,7 +7,7 @@ setuptools.setup(
     name='python_api_client_exercise',
     version='0.0.1',
     author='Tom McKeesick',
-    author_email='tom.mckeesick@lexer.com.au',
+    author_email='tom.mckeesick@lexer.io',
     description='A fake Python API Client problem to solve',
     long_description='',
     long_description_content_type='text/markdown',
