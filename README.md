@@ -4,7 +4,7 @@ This is a basic fake API Client for developers to interact with, somewhat simula
 
 - [Python API Client Exercise](#python-api-client-exercise)
   - [API Client](#api-client)
-  - [Solution](#solution)
+  - [Getting Started](#getting-started)
   - [Exercise](#exercise)
 
 ## API Client
@@ -39,7 +39,7 @@ class Client:
 # The available endpoints can found via the api.ENDPOINTS variable
 ```
 
-## Solution
+## Getting Started
 
 To kick-start a possible solution, here is an example of how to set up this code for use.
 
