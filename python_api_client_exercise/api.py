@@ -1,6 +1,7 @@
 from dataclasses import dataclass
-from typing import List, Iterator
 from datetime import datetime
+from random import randint
+from typing import List, Iterator
 
 from python_api_client_exercise.underbelly import Underbelly
 
@@ -36,8 +37,9 @@ class Client:
 
         response = Underbelly(endpoint, APIObject, start_date, end_date).paginate(Client.PAGE_SIZE)
         for i, page in enumerate(response):
-            if i % 100 == 0:
+            if ((i+1)%100) == 0 and not bool(randint(0, 2)):
                 raise InternalServerError('Server suffered an internal error: DB QUERY TIMEOUT')
-            if i % 40 == 0:
+            elif ((i+1)%40) == 0 and not bool(randint(0, 4)):
                 raise GatewayTimeout('504 Gateway Timeout')
-            yield page
+            else:
+                yield page

@@ -26,14 +26,17 @@ class Underbelly:
         yield from Underbelly.__paginator_9000(self.gen_items(), page_size)
 
     def gen_items(self):
-        for day in range(0, int((self.end_date - self.start_date).total_seconds()/86400)):
+        n_days = int((self.end_date - self.start_date).total_seconds()/86400)
+        for day in range(0, n_days):
             if day % 100 == 0 and randint(0, 1):
-                raise InternalAPIError(f'Database error occurred! Wait 5 seconds and retry your query')
-            yield self.klass(
-                created_at = self.start_date+timedelta(days=day),
-                identifier = str(uuid1()),
-                data       = {f'{self.endpoint}_val': randint(0, 10_000)}
-            )
+                yield InternalAPIError(f'Database error occurred! Wait 5 seconds and retry your query')
+            identifier = str(uuid1())
+            for _ in range(int(self.n_items/n_days)):
+                yield self.klass(
+                    created_at = self.start_date+timedelta(days=day),
+                    identifier = identifier,
+                    data       = {f'{self.endpoint}_val': randint(0, 10_000)}
+                )
 
     @staticmethod
     def __paginator_9000(items, page_size):
