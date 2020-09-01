@@ -38,7 +38,13 @@ class Client:
 
 This method yields a paginated response of `APIObject` objects, which contain 3 fields:
 
-<https://github.com/tmck-code/python-api-client-exercise/blob/fc2c5c0fd07678697e51b18ec9a8db3b43a850ef/python_api_client_exercise/api.py#L7-L11>
+```python
+@dataclass
+class APIObject:
+    created_at: datetime
+    identifier: str
+    data:       dict
+```
 
 ---
 
