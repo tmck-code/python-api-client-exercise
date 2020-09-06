@@ -25,7 +25,9 @@ The API client is comprised of **two modules/files**:
 - `python_api_client_exercise/api.py` - "public-facing" client library
 - `python_api_client_exercise/underbelly.py` - "private/internal" API implementation
 
-_Only the methods in the "public-facing" client code need to be examined for this exercise. You may examine the API implementation if you wish, but it has been written in a style that is intended to slow down comprehension and reading, and **is not required to complete the exercise**._
+> _Only the methods in the "public-facing" client code need to be examined for this exercise. You may examine the API implementation if you wish, but it has been written in a style that is intended to slow down comprehension and reading, and **is not required to complete the exercise**._
+
+---
 
 ### API Client
 
