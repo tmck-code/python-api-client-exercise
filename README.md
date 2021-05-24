@@ -108,6 +108,6 @@ After you have finished this README, navigate to the `solution.py` file in the f
     for endpoint in api.ENDPOINTS:
         print(endpoint)
         results = client.fetch(endpoint, start_date=datetime(2020, 1, 1), end_date=datetime(2020, 2, 1))
-        for data in results:
-          print(data)
+        for page in results:
+            print(page)
     ```
