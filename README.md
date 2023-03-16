@@ -8,9 +8,6 @@ This is a basic fake API Client for developers to interact with, somewhat simula
   - [Exercise](#exercise)
   - [Repository](#repository)
     - [API Client](#api-client)
-  - [(Optional) Installation \& Usage](#optional-installation--usage)
-    - [RELP.it](#relpit)
-    - [Locally](#locally)
 
 ---
 
@@ -66,43 +63,4 @@ The API client is comprised of **two modules/files**:
         created_at: datetime
         identifier: str
         data:       dict
-    ```
-
----
-
-## (Optional) Installation & Usage
-
-_**Remember - this is a pair exercise! Please ask as many question as you want :)-**
-
-### RELP.it
-
-**_If you are using repl.it, then there is nothing to do!_**
-
-After you have finished this README, navigate to the `solution.py` file in the file explorer on the left of the repl.it gui, and start coding!
-
----
-
-### Locally
-
-1. Clone this repository
-2. Open the python environment of your choice (docker/ipython/python/anaconda/mu/jupyter notebook etc.)
-     1. Ensure that the repository is installed via pip:
-
-        ```shell
-        pip install git+http://github.com/tmck-code/python-api-client-exercise
-        ```
-
-3. Paste the following code:
-
-    ```python
-    from python_api_client_exercise import api
-    from datetime import datetime
-
-    client = api.Client('access_token', 'access_token_secret')
-
-    for endpoint in api.ENDPOINTS:
-        print(endpoint)
-        results = client.fetch(endpoint, start_date=datetime(2020, 1, 1), end_date=datetime(2020, 2, 1))
-        for page in results:
-            print(page)
     ```
