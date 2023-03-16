@@ -18,21 +18,14 @@ This is a basic fake API Client for developers to interact with, somewhat simula
 
 > **You will need to modify the solution.py file ONLY**
 
-1. Make a request to the API `fetch` method.
-   > Your solution should involve a method of its own which calls the `fetch` method and deals with the result.
-   >
-   > Depending on your code style, and how you plan your implementation, you can consider this step done for now! You may safely move on and revisit this as the exercise problem evolves.
-2. Print a lightly-formatted representation of the response data
+1. Print each individual APIObject from the response data, and a summary for each endpoint
    > For this step, see the raw output produced by the example code above (which logs each _page_ of result objects), and then alter it to log something nicer for individual object.
    >
    > Also, log any summaries that you might care about after all items have been returned from your request.
-3. Handle possible errors
-    > The fake API could randomly throw an exception, but otherwise it returns some random fake data based on the "endpoint" that is requested.
-    >
-    > In order to discover this, first re-run your current solution with a time range of at least 6-12 months (any more and repl.it can have issues).
-    >
-    > Your solution should implement some sort of error handling that roughly deals with each kind of error in an appropriate fashion. You should test your implementation before considering this step as done (via running - no unit tests required).
-4. (_extension_) Write output to file.
+2. Handle possible errors
+    > The fake API could randomly throw an exception. To discover this, first re-run your current solution with a time range of at least 6-12 months.
+    > You should handle the error by logging it and then allowing the program to continue execution
+3. (_extension_) Write output to file.
     > After the error handling is fully implemented and tested, alter your solution so that the output from each endpoint is written to its own file on disk. You may choose any output format that you deem appropriate, but either _**CSV or NDJSON (newline-delimited JSON)**_ are definitely preferred.
 
 ---
