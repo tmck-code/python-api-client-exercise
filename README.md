@@ -5,12 +5,35 @@ This is a basic fake API Client for developers to interact with, somewhat simula
 ---
 
 - [Python API Client Exercise](#python-api-client-exercise)
+  - [Exercise](#exercise)
   - [Repository](#repository)
     - [API Client](#api-client)
-  - [Exercise](#exercise)
-  - [(Optional) Installation & Usage](#optional-installation--usage)
+  - [(Optional) Installation \& Usage](#optional-installation--usage)
     - [RELP.it](#relpit)
     - [Locally](#locally)
+
+---
+
+## Exercise
+
+> **You will need to modify the solution.py file ONLY**
+
+1. Make a request to the API `fetch` method.
+   > Your solution should involve a method of its own which calls the `fetch` method and deals with the result.
+   >
+   > Depending on your code style, and how you plan your implementation, you can consider this step done for now! You may safely move on and revisit this as the exercise problem evolves.
+2. Print a lightly-formatted representation of the response data
+   > For this step, see the raw output produced by the example code above (which logs each _page_ of result objects), and then alter it to log something nicer for individual object.
+   >
+   > Also, log any summaries that you might care about after all items have been returned from your request.
+3. Handle possible errors
+    > The fake API could randomly throw an exception, but otherwise it returns some random fake data based on the "endpoint" that is requested.
+    >
+    > In order to discover this, first re-run your current solution with a time range of at least 6-12 months (any more and repl.it can have issues).
+    >
+    > Your solution should implement some sort of error handling that roughly deals with each kind of error in an appropriate fashion. You should test your implementation before considering this step as done (via running - no unit tests required).
+4. (_extension_) Write output to file.
+    > After the error handling is fully implemented and tested, alter your solution so that the output from each endpoint is written to its own file on disk. You may choose any output format that you deem appropriate, but either _**CSV or NDJSON (newline-delimited JSON)**_ are definitely preferred.
 
 ---
 
@@ -20,12 +43,12 @@ This repository aims to mimick the experience of using an existing `pip`-package
 
 This repository contains the code for both the `"public-facing"` client library, and also the `"private/internal"` API implementation.
 
+> _Only the methods in the "public-facing" client code (solution.py) needs to be modified for this exercise. You may examine the API implementation if you wish, but it has been written in a style that is intended to slow down comprehension and reading, and **is not required to complete the exercise**._
+
 The API client is comprised of **two modules/files**:
 
 - `python_api_client_exercise/api.py` - "public-facing" client library
 - `python_api_client_exercise/underbelly.py` - "private/internal" API implementation
-
-> _Only the methods in the "public-facing" client code need to be examined for this exercise. You may examine the API implementation if you wish, but it has been written in a style that is intended to slow down comprehension and reading, and **is not required to complete the exercise**._
 
 ---
 
@@ -51,27 +74,6 @@ The API client is comprised of **two modules/files**:
         identifier: str
         data:       dict
     ```
-
----
-
-## Exercise
-
-1. Make a request to the API `fetch` method.
-   > Your solution should involve a method of its own which calls the `fetch` method and deals with the result.
-   >
-   > Depending on your code style, and how you plan your implementation, you can consider this step done for now! You may safely move on and revisit this as the exercise problem evolves.
-2. Print a lightly-formatted representation of the response data
-   > For this step, see the raw output produced by the example code above (which logs each _page_ of result objects), and then alter it to log something nicer for individual object.
-   >
-   > Also, log any summaries that you might care about after all items have been returned from your request.
-3. Handle possible errors
-    > The fake API could randomly throw an exception, but otherwise it returns some random fake data based on the "endpoint" that is requested.
-    >
-    > In order to discover this, first re-run your current solution with a time range of at least 6-12 months (any more and repl.it can have issues).
-    >
-    > Your solution should implement some sort of error handling that roughly deals with each kind of error in an appropriate fashion. You should test your implementation before considering this step as done (via running - no unit tests required).
-4. (_extension_) Write output to file.
-    > After the error handling is fully implemented and tested, alter your solution so that the output from each endpoint is written to its own file on disk. You may choose any output format that you deem appropriate, but either _**CSV or NDJSON (newline-delimited JSON)**_ are definitely preferred.
 
 ---
 
